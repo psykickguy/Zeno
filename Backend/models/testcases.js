@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const testCaseSchema = new mongoose.Schema({
   problemId: { type: mongoose.Schema.Types.ObjectId, ref: "Problem" },
@@ -7,4 +7,4 @@ const testCaseSchema = new mongoose.Schema({
   explanation: String,
 });
 
-module.exports = mongoose.model("TestCase", testCaseSchema);
+export default mongoose.model("TestCase", testCaseSchema);

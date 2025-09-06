@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const roadmapSchema = new mongoose.Schema({
   topic: String, // e.g., "Recursion"
@@ -7,4 +7,4 @@ const roadmapSchema = new mongoose.Schema({
   relatedProblems: [{ type: mongoose.Schema.Types.ObjectId, ref: "Problem" }],
 });
 
-module.exports = mongoose.model("Roadmap", roadmapSchema);
+export default mongoose.model("Roadmap", roadmapSchema);

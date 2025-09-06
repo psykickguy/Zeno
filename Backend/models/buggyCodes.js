@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const buggyCodeSchema = new mongoose.Schema({
   topic: String, // "DP", "Recursion"
@@ -7,4 +7,4 @@ const buggyCodeSchema = new mongoose.Schema({
   explanation: String, // why it's buggy
 });
 
-module.exports = mongoose.model("BuggyCode", buggyCodeSchema);
+export default mongoose.model("BuggyCode", buggyCodeSchema);

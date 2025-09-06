@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const problemSchema = new mongoose.Schema({
   title: String,
@@ -8,8 +8,8 @@ const problemSchema = new mongoose.Schema({
   constraints: String,
   examples: [
     {
-      input: String,
-      output: String,
+      input: mongoose.Schema.Types.Mixed, // can be string, number, array, object
+      output: mongoose.Schema.Types.Mixed,
       explanation: String,
     },
   ],
@@ -17,15 +17,22 @@ const problemSchema = new mongoose.Schema({
     {
       type: {
         type: String,
-        enum: ["Brute Force", "Optimized", "Dynamic Programming"],
+        enum: [
+          "Brute Force",
+          "Optimized",
+          "Dynamic Programming",
+          "Backtracking",
+        ],
       },
       code: String,
       explanation: String,
     },
   ],
-  visualization: Object, // Prewritten steps JSON if available
+  visualization: {
+    type: mongoose.Schema.Types.Mixed, // e.g. JSON with recursion states
+  },
   youtubeLinks: [String],
   buggyTemplates: [String], // Store buggy codes
 });
 
-module.exports = mongoose.model("Problem", problemSchema);
+export default mongoose.model("Problem", problemSchema);

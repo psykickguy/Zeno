@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const algorithmSchema = new mongoose.Schema({
   name: String, // "DFS", "Merge Sort"
@@ -10,4 +10,4 @@ const algorithmSchema = new mongoose.Schema({
   visualization: Object, // base visualization JSON
 });
 
-module.exports = mongoose.model("Algorithm", algorithmSchema);
+export default mongoose.model("Algorithm", algorithmSchema);
