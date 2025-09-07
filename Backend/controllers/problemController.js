@@ -61,19 +61,22 @@ export const deleteProblem = async (req, res) => {
   }
 };
 
-export const getHint = async (req, res) => {
-  try {
-    const problem = await Problem.findById(req.params.id);
-    if (!problem) return res.status(404).json({ message: "Problem not found" });
+// export const getHint = async (req, res) => {
+//   try {
+//     const problem = await Problem.findById(req.params.id);
+//     if (!problem) {
+//       return res.status(404).json({ message: "Problem not found" });
+//     }
 
-    // TODO: Replace with AI call later
-    res.json({
-      hint: "Think about breaking the problem into smaller subproblems first.",
-    });
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
-};
+//     // Later we’ll replace this with an AI API call
+//     res.json({
+//       problemId: problem._id,
+//       hint: "Think about breaking the problem into smaller subproblems first.",
+//     });
+//   } catch (err) {
+//     res.status(500).json({ message: err.message });
+//   }
+// };
 
 export const submitSolution = async (req, res) => {
   try {
