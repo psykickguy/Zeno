@@ -11,6 +11,7 @@ import {
 import { getHint } from "../controllers/hintController.js";
 import { runCode } from "../controllers/runController.js";
 import { analyzeCode } from "../controllers/analyzeController.js";
+import { visualizeProblem } from "../controllers/visualProbController.js";
 
 const router = express.Router();
 
@@ -23,5 +24,6 @@ router.get("/hint/:id", getHint);
 router.post("/solve/:id", submitSolution);
 router.post("/:id/run", runCode);
 router.post("/:id/analyze", analyzeCode);
+router.post("/:id/visualize", visualizeProblem);
 
 export default router;

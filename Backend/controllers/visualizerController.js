@@ -1,17 +1,3 @@
-// import * as visualizer from "../services/visualizer.js";
-
-// export const generateNQueensSteps = async (req, res) => {
-//   try {
-//     const { n } = req.body;
-//     if (!n || n <= 0) return res.status(400).json({ message: "Invalid input" });
-
-//     const steps = visualizer.getNQueensSteps(n);
-//     res.json({ steps, algorithm: "N-Queens" });
-//   } catch (err) {
-//     res.status(500).json({ message: err.message });
-//   }
-// };
-
 import { getAlgorithm } from "../services/algorithm.js";
 import { getVisualizationSteps } from "../services/visualizer.js"; // your current visualizer logic
 
