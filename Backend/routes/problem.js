@@ -10,6 +10,7 @@ import {
 } from "../controllers/problemController.js";
 import { getHint } from "../controllers/hintController.js";
 import { runCode } from "../controllers/runController.js";
+import { analyzeCode } from "../controllers/analyzeController.js";
 
 const router = express.Router();
 
@@ -21,5 +22,6 @@ router.delete("/:id", deleteProblem);
 router.get("/hint/:id", getHint);
 router.post("/solve/:id", submitSolution);
 router.post("/:id/run", runCode);
+router.post("/:id/analyze", analyzeCode);
 
 export default router;

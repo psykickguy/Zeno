@@ -4,6 +4,7 @@ import cors from "cors";
 import mongoose from "mongoose";
 import chatRoutes from "./routes/chat.js";
 import problemRoutes from "./routes/problem.js";
+import visualizerRoutes from "./routes/visualizer.js";
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -13,6 +14,7 @@ app.use(express.json());
 
 app.use("/", chatRoutes);
 app.use("/problems", problemRoutes);
+app.use("/visualizer", visualizerRoutes);
 
 const connectDB = async () => {
   try {
