@@ -33,6 +33,11 @@ const problemSchema = new mongoose.Schema({
   },
   youtubeLinks: [String],
   buggyTemplates: [String], // Store buggy codes
+  source: {
+    type: String,
+    enum: ["LeetCode", "GFG", "Custom", "Other"],
+    default: "Custom",
+  },
 });
 
 export default mongoose.model("Problem", problemSchema);
